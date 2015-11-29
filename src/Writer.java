@@ -9,9 +9,9 @@ public class Writer extends Thread{
 		
 		int key = random.nextInt(1000000000);
 		
-		BD.writers.put(key,BD.writers.size());
-		while(BD.readers.size() != 0 || BD.writers.get(key) > 0);
-		while(!BD.isAuthorization());
+		BD.writers.put(key,BD.writers.size());//Linha comentada para evitar o bloqueio
+		while(BD.readers.size() != 0 || BD.writers.get(key) > 0);//Linha comentada para evitar o bloqueio
+		while(!BD.isAuthorization());//Linha comentada para evitar o bloqueio
 		for(int i = 0; i < 100; i++){
 			BD.setItem(random.nextInt(BD.getSizeDatabase()));
 		}
@@ -21,7 +21,7 @@ public class Writer extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		BD.decrementWriters();
+		BD.decrementWriters();//Linha comentada para evitar o bloqueio
 
 	}
 }

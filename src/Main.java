@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Main {
@@ -10,10 +11,11 @@ public class Main {
 		String filename= "output.txt";
 		
 		for(int i = 0;i<100; i++){
+			BD.database = new LinkedList<String>();
 			BD.readBD();
 			for(int j = 0; j<50; j++){
-				BD.readers = new ConcurrentHashMap<Integer, Integer>();
-				BD.writers = new ConcurrentHashMap<Integer, Integer>();
+				BD.readers = new ConcurrentHashMap<Integer, Integer>();//Linha comentada para evitar o bloqueio
+				BD.writers = new ConcurrentHashMap<Integer, Integer>();//Linha comentada para evitar o bloqueio
 
 				ThreadManager tManager = new ThreadManager(i,100-i);
 				tManager.createThreads();

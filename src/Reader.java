@@ -12,9 +12,9 @@ public class Reader extends Thread{
 		
 		int key = random.nextInt(1000000000);
 		
-		BD.readers.put(key,BD.readers.size());
-		while( BD.readers.get(key) > 0);
-		while(!BD.isAuthorization());
+		BD.readers.put(key,BD.readers.size());//Linha comentada para evitar o bloqueio
+		while( BD.readers.get(key) > 0);//Linha comentada para evitar o bloqueio
+		while(!BD.isAuthorization());//Linha comentada para evitar o bloqueio
 		for(int i = 0; i < 100; i++){
 			wordDatabase = BD.getItem(random.nextInt(BD.getSizeDatabase()));
 		}
@@ -24,8 +24,8 @@ public class Reader extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		BD.readers.remove(key);
-		BD.decrementReaders();
+		BD.readers.remove(key);//Linha comentada para evitar o bloqueio
+		BD.decrementReaders();//Linha comentada para evitar o bloqueio
 		
 	}
 }
