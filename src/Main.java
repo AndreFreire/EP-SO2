@@ -8,9 +8,9 @@ public class Main {
 	public static void main(String[] args) throws IOException{
 
 		String filename= "output.txt";
-
-		BD.readBD();
+		
 		for(int i = 0;i<100; i++){
+			BD.readBD();
 			for(int j = 0; j<50; j++){
 				BD.readers = new ConcurrentHashMap<Integer, Integer>();
 				BD.writers = new ConcurrentHashMap<Integer, Integer>();
