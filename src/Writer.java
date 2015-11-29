@@ -22,6 +22,5 @@ public class Writer extends Thread{
 			e.printStackTrace();
 		}
 		BD.decrementWriters();//Linha comentada para evitar o bloqueio
-
 	}
 }

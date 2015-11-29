@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 public class BD {
 	
 	static LinkedList<String> database = new LinkedList<String>();
@@ -13,6 +12,7 @@ public class BD {
 	static boolean inUse = false;
 	
 	public static void readBD() {
+		BD.database = new LinkedList<String>();
 		try{
 			Scanner sc = new Scanner(new FileReader("bd.txt"));
 			while(sc.hasNext()){
@@ -68,4 +68,8 @@ public class BD {
 			return BD.inUse;
 		}		
 	}	
+	public static void init(){
+		BD.readers = new ConcurrentHashMap<Integer, Integer>();//Linha comentada para evitar o bloqueio
+		BD.writers = new ConcurrentHashMap<Integer, Integer>();//Linha comentada para evitar o bloqueio
+	}
 }

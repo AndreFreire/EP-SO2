@@ -1,6 +1,4 @@
 import java.util.Random;
-
-
 public class Reader extends Thread{
 	
 	String wordDatabase;
@@ -25,7 +23,6 @@ public class Reader extends Thread{
 			e.printStackTrace();
 		}
 		BD.readers.remove(key);//Linha comentada para evitar o bloqueio
-		BD.decrementReaders();//Linha comentada para evitar o bloqueio
-		
+		BD.decrementReaders();//Linha comentada para evitar o bloqueio		
 	}
 }

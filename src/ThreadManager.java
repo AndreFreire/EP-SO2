@@ -1,7 +1,6 @@
 import java.util.LinkedList;
 import java.util.Random;
 
-
 public class ThreadManager {
 	int qtdTreads = 100;
 	int propReaders;
