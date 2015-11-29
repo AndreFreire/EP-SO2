@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) throws IOException{
 
 		String filename= "output.txt";
-		
+
 		for(int i = 0;i<100; i++){
 			BD.database = new LinkedList<String>();
 			BD.readBD();
