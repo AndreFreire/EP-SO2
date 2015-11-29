@@ -1,12 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.LinkedList;
-import java.util.Arrays;
-
 public class Main {
 
 

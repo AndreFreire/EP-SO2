@@ -9,7 +9,7 @@ public class Writer extends Thread{
 		Random random = new Random();
 		
 		for(int i = 0; i < 100; i++){
-			BD.setItem(random.nextInt(BD.getDatabase().size()));
+			BD.setItem(random.nextInt(BD.getSizeDatabase()));
 		}
 		
 		try {

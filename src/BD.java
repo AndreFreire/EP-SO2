@@ -20,18 +20,17 @@ public class BD {
 		}
 	}
 
-	public static LinkedList<String> getDatabase() {
-		return database;
+	public static int getSizeDatabase() {
+		return database.size();
 	}
 
-	public static void setDatabase(LinkedList<String> database) {
-		BD.database = database;
-	}
 	public static String getItem(int position){
+		System.out.println("getItem");
 		return database.get(position);
 	}
 
 	public static void setItem(int position) {
+		System.out.println("setItem");
 		BD.database.set(position,"Modify");
 		
 	}
