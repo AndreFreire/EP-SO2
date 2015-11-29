@@ -60,7 +60,7 @@ public class BD {
 		if(!haveZero && havePositiveNumber)decrementWriters();
 		BD.inUse=false;
 	}
-	public static boolean isAuthorization(){
+	public static synchronized boolean isAuthorization(){
 		if(BD.inUse){
 			return false;
 		}else{
