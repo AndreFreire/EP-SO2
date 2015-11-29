@@ -50,6 +50,16 @@ public class ThreadManager {
 		for(int i = 0; i < qtdTreads; i++){
 			threadsArray[i].start();
 		}
-	}
-	
+		boolean finish = false;
+		while(!finish){
+			for(int i = 0; i < qtdTreads; i++){
+				if(threadsArray[i].isAlive()){
+					finish = false;
+					break;
+				}else {
+					finish = true;
+				}					
+			}
+		}
+	}	
 }

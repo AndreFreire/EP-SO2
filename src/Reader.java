@@ -24,6 +24,7 @@ public class Reader extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		BD.readers.remove(key);
 		BD.decrementReaders();
 		
 	}
