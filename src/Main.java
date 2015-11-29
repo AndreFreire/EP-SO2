@@ -3,15 +3,8 @@ public class Main {
 
 	public static void main(String[] args){
 		BD.readBD();
-		ThreadManager tManager = new ThreadManager();
+		ThreadManager tManager = new ThreadManager(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
 		tManager.createThreads();
 		tManager.runThreads();
-
-
-		//Impress�o do database
-	/*		Iterator iterator = database.iterator();
-			while(iterator.hasNext()){
-				System.out.println(iterator.next());
-			}*/	
 	}
 }

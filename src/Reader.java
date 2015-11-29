@@ -15,7 +15,6 @@ public class Reader extends Thread{
 		BD.readers.put(key,BD.readers.size());
 		while( BD.readers.get(key) > 0);
 		while(!BD.isAuthorization());
-		System.out.println("Entrando na regiao critica - rd");
 		for(int i = 0; i < 100; i++){
 			wordDatabase = BD.getItem(random.nextInt(BD.getSizeDatabase()));
 		}
@@ -25,8 +24,6 @@ public class Reader extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		BD.readers.remove(key);
-		System.out.println("Saindo da regiao critica - rd");
 		BD.decrementReaders();
 		
 	}

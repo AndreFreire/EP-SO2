@@ -12,7 +12,6 @@ public class Writer extends Thread{
 		BD.writers.put(key,BD.writers.size());
 		while(BD.readers.size() != 0 || BD.writers.get(key) > 0);
 		while(!BD.isAuthorization());
-		System.out.println("Entrando na regiao critica wt");
 		for(int i = 0; i < 100; i++){
 			BD.setItem(random.nextInt(BD.getSizeDatabase()));
 		}
@@ -22,8 +21,6 @@ public class Writer extends Thread{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		//BD.writers.remove(key);
-		System.out.println("Saindo da regiao critica - wt");
 		BD.decrementWriters();
 
 	}

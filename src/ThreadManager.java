@@ -4,8 +4,13 @@ import java.util.Random;
 
 public class ThreadManager {
 	int qtdTreads = 100;
-	int propReaders = 50;
-	int propWriters = 50;
+	int propReaders;
+	int propWriters;
+	
+	public ThreadManager(int propReaders, int propWriters) {
+		this.propReaders = propReaders;
+		this.propWriters = propWriters;
+	}
 	
 	Thread[] threadsArray = new Thread[qtdTreads];
 	LinkedList<Integer> usedPosition = new LinkedList<Integer>();
