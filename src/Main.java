@@ -20,7 +20,7 @@ public class Main {
 				long t1 = System.currentTimeMillis();
 				tManager.runThreads();
 				long t2 = System.currentTimeMillis();
-				String text = "Proporção: readers - "+ i +" , writers - "+(100-i) + ", Execução - "+j+", tempo - "+(t2-t1) +"ms";
+				String text = "Proporção: | readers |"+ i +"| writers |"+(100-i) +"| Execução |"+j+"| tempo | "+(t2-t1) +"|ms";
 				System.out.println(text);
 			    FileWriter fw = new FileWriter(filename,true); 
 			    fw.write(text+"\n");
