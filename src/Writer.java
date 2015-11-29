@@ -10,9 +10,8 @@ public class Writer extends Thread{
 		int key = random.nextInt(1000000000);
 		
 		BD.writers.put(key,BD.writers.size());
-		while(!BD.isAuthorization() || BD.readers.size() != 0 || BD.writers.get(key) > 0){
-			System.out.println(BD.inUse+"-"+BD.readers.size()+"-"+BD.writers.get(key));
-		};		
+		while(BD.readers.size() != 0 || BD.writers.get(key) > 0);
+		while(!BD.isAuthorization());
 		System.out.println("Entrando na regiao critica wt");
 		for(int i = 0; i < 100; i++){
 			BD.setItem(random.nextInt(BD.getSizeDatabase()));
